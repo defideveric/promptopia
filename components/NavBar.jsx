@@ -45,7 +45,7 @@ const NavBar = () => {
                     </button>
 
                     <Link href="/profile">
-                        <Image src="/assets/images/logo.svg"
+                        <Image src={session?.user.image}
                             width={37}
                             height={37}
                             className='rounded-full'
