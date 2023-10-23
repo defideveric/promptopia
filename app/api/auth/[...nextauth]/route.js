@@ -11,6 +11,7 @@ const handler = NextAuth({
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         })
     ],
+    callbacks: {
         //updating the state so we always know which user is online
         async session({ session }) {
             //store user id from MongoDB to session
@@ -38,7 +39,8 @@ const handler = NextAuth({
                 console.log(error);
                 return false;
             }
-    }   
+    }
+}
 })
 
 export { handler as GET, handler as POST };
